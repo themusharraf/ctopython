@@ -1,1 +1,1 @@
-# C dan Python
+# C dan Python-ga
