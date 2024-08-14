@@ -27,4 +27,29 @@ gcc -shared -o main.so -fPIC main.c
 - Ushbu buyruq `main.c` faylini umumiy kutubxona `main.so` ga kompilyatsiya qiladi va manzilga bog'liq bo'lmagan kod yaratadi.
 
 ### Qachon ishlatiladi?
-- Bu buyruqdan mustaqil bajariladigan dasturdan ko'ra, umumiy kutubxona yaratmoqchi bo'lganingizda foydalaniladi. Umumiy kutubxonalar turli dasturlar tomonidan ishlatilishi mumkin bo'lgan qayta ishlatiladigan kod yaratishda foydalidir, bu esa takrorlanishni kamaytiradi va yangilanishlarni osonlashtirad
+- Bu buyruqdan mustaqil bajariladigan dasturdan ko'ra, umumiy kutubxona yaratmoqchi bo'lganingizda foydalaniladi. Umumiy kutubxonalar turli dasturlar tomonidan ishlatilishi mumkin bo'lgan qayta ishlatiladigan kod yaratishda foydalidir, bu esa takrorlanishni kamaytiradi va yangilanishlarni osonlashtiradi.
+
+### ishlatilish
+```shell
+// main.c
+#include <stdio.h>
+
+int main(){
+    printf("Hi Python\n");
+    return 0;
+}
+```
+- Yuqoridagi C code ni Python code ga chaqirish
+```python
+# main.py
+import ctypes
+
+code = ctypes.CDLL("./main_1.so")
+
+code.main()
+```
+- ishlatilish
+```shell
+gcc -shared -o main.so -fPIC main.c
+python3 main.py
+```
