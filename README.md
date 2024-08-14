@@ -29,7 +29,7 @@ gcc -shared -o main.so -fPIC main.c
 ### Qachon ishlatiladi?
 - Bu buyruqdan mustaqil bajariladigan dasturdan ko'ra, umumiy kutubxona yaratmoqchi bo'lganingizda foydalaniladi. Umumiy kutubxonalar turli dasturlar tomonidan ishlatilishi mumkin bo'lgan qayta ishlatiladigan kod yaratishda foydalidir, bu esa takrorlanishni kamaytiradi va yangilanishlarni osonlashtiradi.
 
-### ishlatilish
+### Example 1
 ```shell
 // main.c
 #include <stdio.h>
@@ -48,8 +48,73 @@ code = ctypes.CDLL("./main_1.so")
 
 code.main()
 ```
-- ishlatilish
+- ishga tushurish 
 ```shell
 gcc -shared -o main.so -fPIC main.c
 python3 main.py
 ```
+---
+
+### Example 4
+
+- C da `fibonacci` n-darajasini aniqlash funksiyasi
+```shell
+// main_4.c
+
+int fib(int n) {
+    if (n <= 1)
+        return n;
+    return fib(n-1) + fib(n-2);
+}
+```
+- Bu Python da `fibonacci` n-darajasini aniqlash funksiyasi va C da yozilgan `fibonacci` func code ni chaqirib ishlatib farqini ko'ramiz
+```python
+import time
+
+import ctypes
+
+code = ctypes.CDLL('./main_4.so')
+
+code.fib.argtypes = (ctypes.c_int,)
+code.fib.restype = ctypes.c_int
+
+n = 35  # N-ni aniqlash # noqa
+
+
+# Fibonacci sonini Python'da hisoblash # noqa
+def python_fib(n):
+    if n <= 1:
+        return n
+    return python_fib(n - 1) + python_fib(n - 2)
+
+
+# 1. Python kodini sinash # noqa
+start_time = time.time()
+python_result = python_fib(n)
+python_time = time.time() - start_time
+print(f"Python'da vaqt: {python_time:.6f} soniya, Natija: {python_result}")  # noqa
+
+# 2. C kodini sinash # noqa
+start_time = time.time()
+c_result = code.fib(n)
+c_time = time.time() - start_time
+print(f"C'da vaqt: {c_time:.6f} soniya, Natija: {c_result}")  # noqa
+
+# Vaqt farqini chiqaramiz # noqa
+print(f"C kodining tezligi Python'dan {python_time / c_time:.2f} marta tezroq")  # noqa
+```
+- ishga tushurish 
+```shell
+gcc -shared -o main_4.so -fPIC main_4.c
+python3 main_4.py
+```
+- Natija
+```
+Python'da vaqt: 1.116683 soniya, Natija: 9227465
+C'da vaqt: 0.049001 soniya, Natija: 9227465
+C kodining tezligi Python'dan 22.79 marta tezroq
+
+```
+Umid qilama sizga bu foydali buldi 😊 
+
+Telegram address: [Engineering blog](https://t.me/musharrafme)
