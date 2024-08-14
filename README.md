@@ -3,7 +3,7 @@
 ![image](https://github.com/user-attachments/assets/d05f9c22-b8e2-4a8e-af88-0e74170cbfdd)
 
 ### Commonds
-- C da yozilgan code ni .so ga o'tkazib beradi 
+- C da yozilgan code ni `.so` ga o'tkazib beradi 
 ```shell
 gcc -shared -o main.so -fPIC main.c
 ```
