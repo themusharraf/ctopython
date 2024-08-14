@@ -3,7 +3,18 @@
 ![image](https://github.com/user-attachments/assets/d05f9c22-b8e2-4a8e-af88-0e74170cbfdd)
 
 ### Commonds
-- C da yozilgan code ni `.so` ga o'tkazib beradi 
+- C code compilyatsiya qilib beradi
+```shell
+gcc main.c -o main
+./main
+```
+---
+- Python code ishga tushuradi
+```shell
+python3 main.py
+```
+---
+- C da yozilgan code ni `.so` ga o'tkazib beradi
 ```shell
 gcc -shared -o main.so -fPIC main.c
 ```
