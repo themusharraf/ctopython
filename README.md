@@ -3,7 +3,7 @@
 ![image](https://github.com/user-attachments/assets/d05f9c22-b8e2-4a8e-af88-0e74170cbfdd)
 
 ### Commonds
-- C code compilyatsiya qilib beradi
+- C codeni compilyatsiya qilib beradi
 ```shell
 gcc main.c -o main
 ./main
