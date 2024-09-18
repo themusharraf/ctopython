@@ -8,7 +8,7 @@
 gcc main.c -o main
 ./main
 ```
----
+--- 
 - Python code ishga tushuradi
 ```shell
 python3 main.py
