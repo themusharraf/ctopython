@@ -1,6 +1,7 @@
 # C dan Python ga
 
-![image](https://github.com/user-attachments/assets/d05f9c22-b8e2-4a8e-af88-0e74170cbfdd)
+![Uploading DALL·E 2024-11-16 20.45.58 - A creative and visually appealing illustration showing an integration of C_C++ and Python. On the left, a blue box labeled 'C_C++' with a modern tech .jpg…]()
+
 
 ### Commonds
 - C codeni compilyatsiya qilib beradi
