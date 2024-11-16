@@ -1,6 +1,7 @@
 # C dan Python ga
 
-![Uploading DALL·E 2024-11-16 20.45.58 - A creative and visually appealing illustration showing an integration of C_C++ and Python. On the left, a blue box labeled 'C_C++' with a modern tech .jpg…]()
+![DALL·E 2024-11-16 20 45 58 - A creative and visually appealing illustration showing an integration of C_C++ and Python  On the left, a blue box labeled 'C_C++' with a modern tech ](https://github.com/user-attachments/assets/77f41974-016d-4cb1-a3b0-232b1989044c)
+
 
 
 ### Commonds
